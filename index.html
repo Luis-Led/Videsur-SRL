@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VIDESUR S.R.L. — Transporte nacional e internacional de carga.">
+  <meta name="theme-color" content="#0739ef">
+  <title>VIDESUR S.R.L. | Transporte de Carga</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --videsur-blue: #0739ef;
+      --videsur-blue-dark: #09256b;
+      --videsur-yellow: #ffdf00;
+      --videsur-text: #172a59;
+      --videsur-muted: #65718b;
+      --videsur-line: #e5eaf5;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { font-family: "Inter", Arial, sans-serif; color: var(--videsur-text); }
+    .navbar { background: rgba(255,255,255,.97); box-shadow: 0 2px 16px rgba(8,36,109,.07); }
+    .navbar-brand { line-height: 1; }
+    .brand-name { color: var(--videsur-yellow); font-weight: 800; letter-spacing: -1.8px; font-size: 2rem; }
+    .brand-sub { display: block; color: var(--videsur-blue); font-size: .78rem; font-weight: 700; text-align: center; margin-top: 4px; }
+    .navbar .nav-link { color: var(--videsur-blue-dark); font-weight: 650; margin: 0 .35rem; }
+    .navbar .nav-link:hover, .navbar .nav-link.active { color: var(--videsur-blue); }
+    .btn-videsur { background: var(--videsur-yellow); color: var(--videsur-blue-dark); border: 2px solid var(--videsur-yellow); border-radius: 50rem; padding: .78rem 1.25rem; font-weight: 750; }
+    .btn-videsur:hover { background: #ffe943; border-color: #ffe943; color: var(--videsur-blue-dark); transform: translateY(-1px); }
+    .btn-outline-light-rounded { border: 2px solid #fff; color: #fff; border-radius: 50rem; padding: .78rem 1.25rem; font-weight: 650; }
+    .btn-outline-light-rounded:hover { background: #fff; color: var(--videsur-blue); }
+    .hero { background: var(--videsur-blue); color: #fff; overflow: hidden; }
+    .hero-copy { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+    .eyebrow { color: var(--videsur-yellow); text-transform: uppercase; letter-spacing: 2px; font-size: .78rem; font-weight: 800; }
+    .hero h1 { font-size: clamp(2.45rem, 5vw, 4.35rem); line-height: 1.07; letter-spacing: -2px; font-weight: 800; }
+    .text-yellow { color: var(--videsur-yellow); }
+    .hero p.lead { color: #eef2ff; max-width: 570px; }
+    .hero-image { min-height: 440px; height: 100%; background: linear-gradient(90deg,rgba(7,57,239,.12),transparent), url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85") center/cover no-repeat; }
+    .trust-strip { border-bottom: 1px solid var(--videsur-line); }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: .8rem; padding: 1.4rem .5rem; font-weight: 700; }
+    .trust-item i { color: var(--videsur-blue); font-size: 1.7rem; }
+    .section-padding { padding: 5.25rem 0; }
+    .section-eyebrow { color: var(--videsur-blue); text-transform: uppercase; letter-spacing: 2px; font-size: .78rem; font-weight: 800; }
+    .section-title { color: var(--videsur-blue-dark); font-weight: 800; letter-spacing: -1.2px; line-height: 1.15; }
+    .section-description { color: var(--videsur-muted); max-width: 680px; }
+    .service-card { height: 100%; border: 1px solid var(--videsur-line); border-radius: 1rem; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 35px rgba(8,36,109,.1); }
+    .service-img { height: 220px; object-fit: cover; }
+    .service-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: #edf1ff; color: var(--videsur-blue); font-size: 1.4rem; }
+    .about-section { background: #f6f8ff; }
+    .about-image { width: 100%; min-height: 330px; object-fit: cover; border-radius: 1.2rem; }
+    .check-list { list-style: none; padding: 0; }
+    .check-list li { margin-bottom: .85rem; display: flex; gap: .7rem; }
+    .check-list i { color: var(--videsur-blue); }
+    .quote-band { background: var(--videsur-blue); color: #fff; }
+    .quote-band h2 { color: #fff; font-weight: 800; }
+    .location-card { border: 1px solid var(--videsur-line); border-radius: 1rem; padding: 1.6rem; height: 100%; }
+    .map-frame { width: 100%; height: 360px; border: 0; border-radius: 1rem; background: #eef2ff; }
+    .contact-icon { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: #edf1ff; color: var(--videsur-blue); font-size: 1.25rem; flex-shrink: 0; }
+    footer { background: #071b52; color: #dbe4ff; }
+    footer a { color: #fff; text-decoration: none; }
+    footer a:hover { color: var(--videsur-yellow); }
+    .footer-brand { color: var(--videsur-yellow); font-size: 1.45rem; font-weight: 800; letter-spacing: -1px; }
+    .back-to-top { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 1000; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--videsur-yellow); color: var(--videsur-blue-dark); box-shadow: 0 8px 24px rgba(0,0,0,.16); text-decoration: none; font-size: 1.2rem; }
+    @media (max-width: 767.98px) {
+      .hero-copy { padding: 3.6rem 1rem; }
+      .hero-image { min-height: 270px; }
+      .trust-item { justify-content: flex-start; padding: .9rem 1rem; border-bottom: 1px solid var(--videsur-line); }
+      .section-padding { padding: 3.8rem 0; }
+      .about-image { min-height: 240px; }
+      .map-frame { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER + NAV -->
+  <header>
+    <nav class="navbar navbar-expand-lg sticky-top py-3" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio" aria-label="VIDESUR, inicio">
+          <span class="brand-name">VIDESUR</span>
+          <span class="brand-sub">Transporte de Carga</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVidesur" aria-controls="navbarVidesur" aria-expanded="false" aria-label="Mostrar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarVidesur">
+          <ul class="navbar-nav mx-auto my-3 my-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
+          </ul>
+          <a class="btn btn-videsur wa-link" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-1"></i> Cotizar ahora</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN: todas las secciones principales están dentro de main -->
+  <main>
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+      <div class="container-fluid">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="hero-copy ps-lg-5 ps-xl-0 ms-xl-auto pe-lg-4" style="max-width:680px">
+              <div class="eyebrow mb-3">VIDESUR S.R.L. · Transporte de carga</div>
+              <h1 class="mb-4">Movemos tu carga.<br>Cumplimos <span class="text-yellow">tu destino.</span></h1>
+              <p class="lead mb-4">Transporte nacional e internacional de carga, con un servicio responsable y oportuno.</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a class="btn btn-videsur" href="#ubicacion">Solicitar cotización <i class="bi bi-arrow-right ms-1"></i></a>
+                <a class="btn btn-outline-light-rounded" href="#servicios">Conocer servicios</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6"><div class="hero-image" role="img" aria-label="Imagen de transporte y logística de carga"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="trust-strip" aria-label="Nuestros valores">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3">
+          <div class="col"><div class="trust-item"><i class="bi bi-shield-check"></i><span>Responsabilidad</span></div></div>
+          <div class="col"><div class="trust-item"><i class="bi bi-clock-history"></i><span>Servicio oportuno</span></div></div>
+          <div class="col"><div class="trust-item"><i class="bi bi-person-check"></i><span>Atención personalizada</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section-padding" id="servicios">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-eyebrow mb-2">Nuestros servicios</div>
+          <h2 class="section-title display-6 mb-3">Soluciones de transporte para tu negocio</h2>
+          <p class="section-description mx-auto mb-0">Conoce nuestras opciones de transporte y contáctanos para cotizar según tu carga y destino.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="card service-card">
+              <img class="service-img card-img-top" src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1000&q=85" alt="Camión de carga circulando por carretera">
+              <div class="card-body p-4 p-lg-4">
+                <div class="service-icon mb-3"><i class="bi bi-truck"></i></div>
+                <h3 class="h4 fw-bold">Transporte nacional</h3>
+                <p class="text-secondary mb-0">Traslado de carga dentro del territorio nacional, coordinado según las características del envío y las necesidades de tu operación.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="card service-card">
+              <img class="service-img card-img-top" src="https://images.unsplash.com/photo-1578575437130-527566e1de07?auto=format&fit=crop&w=1000&q=85" alt="Buque y contenedores de carga en puerto">
+              <div class="card-body p-4 p-lg-4">
+                <div class="service-icon mb-3"><i class="bi bi-globe-americas"></i></div>
+                <h3 class="h4 fw-bold">Transporte internacional</h3>
+                <p class="text-secondary mb-0">Coordinación de transporte internacional de carga. Consulta con nuestro equipo las rutas, condiciones y disponibilidad para tu envío.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about-section section-padding" id="nosotros">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <img class="about-image" src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1200&q=85" alt="Carga preparada para operaciones de transporte">
+          </div>
+          <div class="col-lg-6">
+            <div class="section-eyebrow mb-2">Sobre nosotros</div>
+            <h2 class="section-title display-6 mb-3">Tu carga, en buenas manos.</h2>
+            <p class="text-secondary">En VIDESUR S.R.L. ofrecemos servicios de transporte nacional e internacional de carga. Trabajamos con responsabilidad y atención oportuna para coordinar cada servicio de acuerdo con los requerimientos del cliente.</p>
+            <ul class="check-list mt-4 mb-4">
+              <li><i class="bi bi-check-circle-fill"></i><span>Comunicación directa para coordinar tu servicio.</span></li>
+              <li><i class="bi bi-check-circle-fill"></i><span>Atención a los requerimientos de cada envío.</span></li>
+              <li><i class="bi bi-check-circle-fill"></i><span>Cotizaciones de acuerdo con el tipo de carga y destino.</span></li>
+            </ul>
+            <a class="btn btn-primary rounded-pill px-4 py-3 fw-semibold wa-link" style="background:var(--videsur-blue);border-color:var(--videsur-blue)" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-2"></i>Hablar con VIDESUR</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLAMADA A LA ACCIÓN -->
+    <section class="quote-band py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg">
+            <h2 class="h2 mb-2">¿Necesitas transportar tu carga?</h2>
+            <p class="mb-0 text-white-50">Cuéntanos qué necesitas y solicita una cotización.</p>
+          </div>
+          <div class="col-lg-auto"><a class="btn btn-videsur btn-lg wa-link" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-2"></i>Cotizar por WhatsApp</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="section-padding" id="ubicacion">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-eyebrow mb-2">Ubicación y contacto</div>
+          <h2 class="section-title display-6 mb-3">Estamos para ayudarte</h2>
+          <p class="section-description mx-auto mb-0">Comunícate con VIDESUR S.R.L. para consultar nuestros servicios y coordinar tu cotización.</p>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="location-card">
+              <div class="d-flex gap-3 mb-4">
+                <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+                <div><h3 class="h5 fw-bold mb-1">Nuestra ubicación</h3><p class="text-secondary mb-0">Consulta la ubicación de VIDESUR S.R.L. en Google Maps.</p></div>
+              </div>
+              <div class="d-flex gap-3 mb-4">
+                <div class="contact-icon"><i class="bi bi-truck"></i></div>
+                <div><h3 class="h5 fw-bold mb-1">Área de servicio</h3><p class="text-secondary mb-0">Transporte nacional e internacional de carga.</p></div>
+              </div>
+              <div class="d-flex gap-3 mb-4">
+                <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
+                <div><h3 class="h5 fw-bold mb-1">Cotizaciones</h3><p class="text-secondary mb-0">Escríbenos por WhatsApp para consultar por tu envío.</p></div>
+              </div>
+              <a class="btn btn-videsur wa-link w-100 mt-2" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-2"></i>Contactar por WhatsApp</a>
+              <a class="btn btn-outline-primary rounded-pill w-100 mt-3" href="https://www.google.com/maps/search/?api=1&query=VIDESUR+S.R.L.+Transporte+de+Carga" target="_blank" rel="noopener"><i class="bi bi-map me-2"></i>Buscar en Google Maps</a>
+              <p class="small text-secondary mt-3 mb-0">La dirección exacta debe añadirse cuando la empresa la confirme.</p>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <iframe class="map-frame" title="Búsqueda de VIDESUR S.R.L. en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=VIDESUR%20S.R.L.%20Transporte%20de%20Carga&t=&z=5&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5">
+          <a class="text-decoration-none d-inline-block mb-3" href="#inicio"><span class="footer-brand">VIDESUR</span><span class="d-block small text-white">Transporte de Carga</span></a>
+          <p class="text-white-50 mb-0">Transporte nacional e internacional de carga, con responsabilidad y atención oportuna.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2 class="h6 text-white fw-bold mb-3">Navegación</h2>
+          <ul class="list-unstyled d-grid gap-2 small mb-0">
+            <li><a href="#inicio">Inicio</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#ubicacion">Ubicación</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h2 class="h6 text-white fw-bold mb-3">Contacto</h2>
+          <a class="wa-link d-inline-flex align-items-center gap-2" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Solicitar cotización</a>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small text-white-50">
+        <span>© <span id="currentYear"></span> VIDESUR S.R.L. Todos los derechos reservados.</span>
+        <a href="#inicio">Volver al inicio ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#inicio" aria-label="Volver al inicio"><i class="bi bi-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // IMPORTANTE: reemplaza el valor por el número oficial, con código de país y solo dígitos.
+    // Ejemplo de formato para Bolivia: 591XXXXXXXX
+    const WHATSAPP_NUMBER = "591XXXXXXXX";
+    const WHATSAPP_MESSAGE = "Hola, VIDESUR. Quisiera solicitar una cotización para transporte de carga.";
+    const whatsappUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+
+    document.querySelectorAll(".wa-link").forEach((link) => {
+      link.href = whatsappUrl;
+      link.addEventListener("click", (event) => {
+        if (WHATSAPP_NUMBER.includes("X")) {
+          event.preventDefault();
+          alert("Configura el número oficial de WhatsApp en la variable WHATSAPP_NUMBER al final del archivo index.html.");
+        }
+      });
+    });
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
